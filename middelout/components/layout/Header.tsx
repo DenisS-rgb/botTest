@@ -4,65 +4,68 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navigation = [
-    { name: "Despre noi", href: "#despre" },
-    { name: "Serviciile oferite", href: "#servicii" },
-    { name: "Portofoliu", href: "#portofoliu" },
-    { name: "Contact", href: "#contact" },
-  ];
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
-      <nav className="container mx-auto px-6 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+      <div className="max-w-7xl mx-auto px-8 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 text-xl font-bold">
-            <span className="text-2xl">▲</span>
-            <span>MIDDLEOUT</span>
+          <Link href="/" className="flex items-center">
+            <div className="text-2xl font-bold text-black">MIDDLEOUT</div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-sm text-gray-700 hover:text-black transition-colors"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
+          <nav className="hidden md:flex items-center space-x-10">
+            <Link
+              href="#about"
+              className="text-lg font-medium text-black hover:text-primary transition-colors"
+            >
+              Despre noi
+            </Link>
+            <Link
+              href="#services"
+              className="text-lg font-medium text-black hover:text-primary transition-colors"
+            >
+              Serviciile oferite
+            </Link>
+            <Link
+              href="#portfolio"
+              className="text-lg font-medium text-black hover:text-primary transition-colors"
+            >
+              Portofoliu
+            </Link>
+            <Link
+              href="#contact"
+              className="text-lg font-medium text-black hover:text-primary transition-colors"
+            >
+              Contact
+            </Link>
+          </nav>
 
           {/* CTA Button */}
-          <Link
-            href="#contact"
-            className="hidden md:flex items-center gap-2 bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-gray-800 transition-all"
-          >
-            Contactează-ne
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          <div className="hidden md:block">
+            <Link
+              href="#contact"
+              className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-[47px] font-medium text-xl hover:bg-gray-800 transition-colors"
             >
-              <path
-                d="M3.33334 8H12.6667M12.6667 8L8.00001 3.33334M12.6667 8L8.00001 12.6667"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </Link>
+              Contactează-ne
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M7 17L17 7M17 7H7M17 7V17"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </Link>
+          </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile menu button */}
           <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <svg
               width="24"
@@ -70,64 +73,60 @@ export default function Header() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
             >
-              {mobileMenuOpen ? (
-                <>
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </>
+              {isMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               ) : (
-                <>
-                  <line x1="3" y1="12" x2="21" y2="12" />
-                  <line x1="3" y1="6" x2="21" y2="6" />
-                  <line x1="3" y1="18" x2="21" y2="18" />
-                </>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               )}
             </svg>
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-3">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block text-gray-700 hover:text-black transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <nav className="md:hidden mt-4 pb-4 space-y-3">
+            <Link
+              href="#about"
+              className="block text-lg font-medium text-black hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Despre noi
+            </Link>
+            <Link
+              href="#services"
+              className="block text-lg font-medium text-black hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Serviciile oferite
+            </Link>
+            <Link
+              href="#portfolio"
+              className="block text-lg font-medium text-black hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Portofoliu
+            </Link>
             <Link
               href="#contact"
-              className="flex items-center justify-center gap-2 bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-gray-800 transition-all mt-4"
-              onClick={() => setMobileMenuOpen(false)}
+              className="block text-lg font-medium text-black hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
             >
-              Contactează-ne
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3.33334 8H12.6667M12.6667 8L8.00001 3.33334M12.6667 8L8.00001 12.6667"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              Contact
             </Link>
-          </div>
+          </nav>
         )}
-      </nav>
+      </div>
     </header>
   );
 }

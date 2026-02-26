@@ -1,112 +1,76 @@
 export default function Services() {
   const services = [
     {
-      title: "Dezvoltare Aplicații Web La Cheie",
+      title: "Dezvoltare aplicații web la cheie",
       description:
-        "Creăm aplicații web funcționale, scalabile și sigure, gata de utilizare. Ne specializăm în arhitectura dezvoltare și implementare, oferind soluții personalizate până și ocupa de design.",
-      icon: (
-        <svg
-          width="48"
-          height="48"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <polyline points="16 18 22 12 16 6" />
-          <polyline points="8 6 2 12 8 18" />
-        </svg>
-      ),
+        "Creăm aplicații web funcționale, scalabile și sigure, gata de utilizare. Ne specializăm în arhitectură, dezvoltare și implementare, oferind soluții stabile și eficiente, fără a ne ocupa de design.",
+      icon: "💻",
     },
     {
-      title: "Hosting & Infrastructură",
+      title: "Hosting & infrastructură",
       description:
-        "Furnizăm configurarea infrastructurii necesare pentru funcționarea optimă a aplicației, gestionând serverele, securitatea, mentenanța și asigurând disponibilitate constantă.",
-      icon: (
-        <svg
-          width="48"
-          height="48"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
-          <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
-          <line x1="6" y1="6" x2="6.01" y2="6" />
-          <line x1="6" y1="18" x2="6.01" y2="18" />
-        </svg>
-      ),
+        "Furnizăm configurarea infrastructurii necesare pentru funcționarea optimă a aplicațiilor, gestionând serverele, securitatea, mentenanța și asigurând o disponibilitate constantă.",
+      icon: "🖥️",
     },
     {
-      title: "Consultanță IT & Machine Learning",
+      title: "Consultanță IT & machine learning",
       description:
-        "Oferim consultanță IT pentru facilitarea deciziilor informate, de la alegerea platformei de machine learning personalizate, de la analiza datelor până la implementarea practică în aplicații.",
-      icon: (
-        <svg
-          width="48"
-          height="48"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-          <line x1="8" y1="21" x2="16" y2="21" />
-          <line x1="12" y1="17" x2="12" y2="21" />
-        </svg>
-      ),
+        "Oferim consultanță IT pentru facilitarea deciziilor informate și dezvoltăm modele de machine learning personalizate, de la analiza datelor până la implementarea practică în aplicații.",
+      icon: "🧠",
     },
   ];
 
   return (
-    <section id="servicii" className="py-16 px-6 bg-white">
-      <div className="container mx-auto max-w-6xl">
-        {/* Section Header */}
-        <div className="text-center space-y-4 mb-12">
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <span className="text-sm font-medium text-gray-500 tracking-wider">CE FACEM</span>
-            <span className="text-primary text-lg">✦</span>
+    <section id="services" className="py-20 bg-white relative overflow-hidden">
+      {/* Decorative stars */}
+      <div className="absolute top-20 left-32 w-4 h-4 animate-pulse">
+        <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-200 rounded-full blur-sm"></div>
+      </div>
+      <div className="absolute top-40 right-20 w-7 h-7 animate-pulse delay-200">
+        <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-200 rounded-full blur-sm"></div>
+      </div>
+      <div className="absolute bottom-32 left-1/2 w-4 h-4 animate-pulse delay-500">
+        <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-200 rounded-full blur-sm"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="text-2xl font-semibold text-black tracking-widest uppercase mb-6">
+            Ce facem
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight max-w-3xl mx-auto">
-            Oferim Servicii De Înaltă Calitate
-            <br />
-            Care Generează Rezultate
-            <br />
-            Tangibile.
+          <h2 className="text-6xl font-semibold text-black mb-6 uppercase">
+            Oferim servicii de înaltă calitate care generează rezultate
+            tangibile.
           </h2>
-          <p className="text-sm text-gray-600 max-w-xl mx-auto pt-2">
+          <p className="text-lg text-black max-w-2xl mx-auto">
             Ajutăm clienții să-și dezvolte proiectele prin soluții eficiente,
             expertiză de calitate și un proces de lucru clar și structurat.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white border-2 border-gray-200 rounded-3xl p-8 hover:border-primary transition-all duration-300 hover:shadow-lg"
+              className="group relative bg-white border border-gray-300 rounded-xl p-8 hover:shadow-2xl transition-all duration-300"
             >
-              <div className="space-y-6">
-                <div className="w-16 h-16 flex items-center justify-center">
-                  {service.icon}
-                </div>
-                <div className="space-y-3">
-                  <h3 className="text-xl font-bold leading-snug">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
+              {/* Icon */}
+              <div className="text-6xl mb-6">{service.icon}</div>
+
+              {/* Title */}
+              <h3 className="text-2xl font-bold text-black mb-4 uppercase leading-tight">
+                {service.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-600 leading-relaxed">
+                {service.description}
+              </p>
+
+              {/* Hover effect glow */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-100 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
             </div>
           ))}
         </div>

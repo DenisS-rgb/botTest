@@ -11,14 +11,28 @@ export default {
       colors: {
         primary: {
           DEFAULT: "#0066FF",
-          foreground: "#FFFFFF",
+          dark: "#242E49",
+        },
+        secondary: {
+          DEFAULT: "#3A384F",
         },
         accent: {
-          DEFAULT: "#0066FF",
+          green: "#B9FF66",
+          blue: "#8FBCFF",
+        },
+        gray: {
+          50: "#F7F7F7",
+          100: "#F3F4F6",
+          200: "#E5E5E5",
+          400: "#B2B2B2",
+          600: "#464646",
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
+        urbanist: ["Urbanist", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        pontano: ["Pontano Sans", "sans-serif"],
       },
     },
   },

@@ -1,31 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "@/components/ui/SmoothScroll";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "MIDDLEOUT - Dezvoltare Web Profesională",
+  title: "MIDDLEOUT - Dezvoltare Web & Soluții IT",
   description:
-    "Dezvoltăm website-uri puternice care aduc rezultate remarcabile. Soluții web personalizate cu design impresionant și funcționalitate robustă.",
-  keywords: [
-    "dezvoltare web",
-    "website-uri profesionale",
-    "hosting",
-    "consultanță IT",
-    "machine learning",
-  ],
-  openGraph: {
-    title: "MIDDLEOUT - Dezvoltare Web Profesională",
-    description:
-      "Dezvoltăm website-uri puternice care aduc rezultate remarcabile.",
-    type: "website",
-  },
+    "Dezvoltăm website-uri puternice care aduc rezultate remarcabile. Soluții web personalizate pentru afacerea ta.",
 };
 
 export default function RootLayout({
@@ -35,9 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ro" className="scroll-smooth">
-      <body className={`${inter.variable} font-sans antialiased`}>
-        <SmoothScroll />
+      <body className={inter.className}>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

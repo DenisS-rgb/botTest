@@ -2,19 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  * {
-    @apply border-gray-200;
-  }
-
-  body {
-    @apply bg-white text-black antialiased;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.text-balance {
+  text-wrap: balance;
 }

@@ -4,11 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply bg-white text-black antialiased;
-    font-family: 'Inter', sans-serif;
-  }
+body {
+  background-color: white;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', sans-serif;
 }
 
 @layer utilities {

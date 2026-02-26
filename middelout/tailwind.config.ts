@@ -9,8 +9,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "#0066FF",
           foreground: "#FFFFFF",
@@ -18,10 +16,6 @@ export default {
         accent: {
           DEFAULT: "#0066FF",
         },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-        },
-        border: "hsl(var(--border))",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],

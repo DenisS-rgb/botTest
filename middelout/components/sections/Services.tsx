@@ -21,56 +21,93 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-20 bg-white relative overflow-hidden">
+    <section
+      id="services"
+      className="relative w-full max-w-[1440px] mx-auto bg-white py-20 px-4 md:px-8 lg:px-16 overflow-hidden"
+    >
       {/* Decorative stars */}
-      <div className="absolute top-20 left-32 w-4 h-4 animate-pulse">
-        <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-200 rounded-full blur-sm"></div>
-      </div>
-      <div className="absolute top-40 right-20 w-7 h-7 animate-pulse delay-200">
-        <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-200 rounded-full blur-sm"></div>
-      </div>
-      <div className="absolute bottom-32 left-1/2 w-4 h-4 animate-pulse delay-500">
-        <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-200 rounded-full blur-sm"></div>
-      </div>
+      <div
+        className="absolute w-[14px] h-[15px] opacity-100 hidden lg:block"
+        style={{
+          left: "23%",
+          top: "15%",
+          background:
+            "linear-gradient(185deg, rgba(71, 118, 230, 1) 35%, rgba(195, 211, 248, 1) 88%)",
+          borderRadius: "50%",
+          filter: "drop-shadow(0px 0px 11.1px rgba(128, 165, 255, 0.45))",
+          clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
+        }}
+      ></div>
+      <div
+        className="absolute w-[25px] h-[27px] opacity-100 hidden lg:block"
+        style={{
+          right: "20%",
+          top: "18%",
+          background:
+            "linear-gradient(185deg, rgba(71, 118, 230, 1) 35%, rgba(195, 211, 248, 1) 88%)",
+          borderRadius: "50%",
+          filter: "drop-shadow(0px 0px 11.1px rgba(128, 165, 255, 0.45))",
+          clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
+        }}
+      ></div>
+      <div
+        className="absolute w-[13px] h-[14px] opacity-100 hidden lg:block"
+        style={{
+          left: "57%",
+          top: "5%",
+          background:
+            "linear-gradient(185deg, rgba(71, 118, 230, 1) 35%, rgba(195, 211, 248, 1) 88%)",
+          borderRadius: "50%",
+          filter: "drop-shadow(0px 0px 11.1px rgba(128, 165, 255, 0.45))",
+          clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
+        }}
+      ></div>
 
-      <div className="max-w-7xl mx-auto px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="text-2xl font-semibold text-black tracking-widest uppercase mb-6">
+      <div className="max-w-[1200px] mx-auto">
+        {/* Small heading */}
+        <div className="text-center mb-6">
+          <h3 className="font-inter font-semibold text-[23px] leading-[1.2] tracking-[0.15em] uppercase text-black">
             Ce facem
-          </div>
-          <h2 className="text-6xl font-semibold text-black mb-6 uppercase">
-            Oferim servicii de înaltă calitate care generează rezultate
-            tangibile.
-          </h2>
-          <p className="text-lg text-black max-w-2xl mx-auto">
-            Ajutăm clienții să-și dezvolte proiectele prin soluții eficiente,
-            expertiză de calitate și un proces de lucru clar și structurat.
-          </p>
+          </h3>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Main title */}
+        <h2 className="font-inter font-semibold text-[clamp(32px,4vw,57px)] leading-[1.18] uppercase text-center text-black mb-8 max-w-[926px] mx-auto">
+          Oferim servicii de înaltă calitate care generează rezultate
+          tangibile.
+        </h2>
+
+        {/* Subtitle */}
+        <p className="font-inter font-normal text-[18px] leading-[1.53] text-center text-black mb-16 max-w-[348px] mx-auto">
+          Ajutăm clienții să-și dezvolte proiectele prin soluții eficiente,
+          expertiză de calitate și un proces de lucru clar și structurat.
+        </p>
+
+        {/* Service cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative bg-white border border-gray-300 rounded-xl p-8 hover:shadow-2xl transition-all duration-300"
+              className="group bg-transparent border-[1.5px] border-[#3A384F] rounded-[10px] p-6 hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center min-h-[279px]"
+              style={{
+                boxShadow: "0px 0px 15.2px rgba(115, 112, 142, 0.33)",
+              }}
             >
               {/* Icon */}
-              <div className="text-6xl mb-6">{service.icon}</div>
+              <div className="text-[50px] mb-4">{service.icon}</div>
 
               {/* Title */}
-              <h3 className="text-2xl font-bold text-black mb-4 uppercase leading-tight">
+              <h3 className="font-inter font-bold text-[19px] leading-[1.18] tracking-[0.04em] uppercase text-black mb-4">
                 {service.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-600 leading-relaxed">
+              <p className="font-urbanist font-normal text-[15px] leading-[1.53] text-[#464646]">
                 {service.description}
               </p>
 
               {/* Hover effect glow */}
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-100 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
+              <div className="absolute inset-0 rounded-[10px] bg-gradient-to-br from-blue-100 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
             </div>
           ))}
         </div>

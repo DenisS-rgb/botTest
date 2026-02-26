@@ -17,73 +17,68 @@ export default function About() {
     },
   ];
 
-  const stats = [
-    { value: "15+", label: "ani", sublabel: "de experiență" },
-    { value: "300+", label: "clienți deserviți", sublabel: "" },
-    { value: "10+", label: "specialiști în echipă", sublabel: "" },
-  ];
-
   return (
-    <section id="despre" className="py-20 px-6 bg-white">
+    <section id="despre" className="py-16 px-6 bg-white">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Column */}
-          <div className="space-y-8">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-0.5 bg-gray-300"></div>
-              <h2 className="text-3xl md:text-4xl font-bold flex items-center gap-3">
+          <div className="space-y-6">
+            {/* Header with line */}
+            <div className="flex items-center gap-3">
+              <div className="w-16 h-px bg-gray-300"></div>
+              <h2 className="text-2xl font-bold whitespace-nowrap">
                 Despre MIDDLEOUT
-                <span className="text-primary text-2xl">✦</span>
               </h2>
+              <span className="text-primary text-xl">✦</span>
             </div>
 
-            <p className="text-lg text-gray-700 leading-relaxed">
+            {/* Description */}
+            <p className="text-base text-gray-700 leading-relaxed">
               Middleout este o echipă de profesioniști în dezvoltare web care
               creează website-uri rapide și eficiente. Punem accent pe soluții bine
               gândite, puternice ce fac afacerea ta vizibilă și accesibilă.
             </p>
 
-            <div className="py-6">
-              <p className="text-3xl font-medium text-primary italic">
+            {/* Tagline */}
+            <div className="py-4">
+              <p className="text-2xl font-normal text-primary" style={{ fontFamily: 'cursive' }}>
                 Web, without the Excuses.
               </p>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-4">
-              {stats.map((stat, index) => (
-                <div key={index} className="space-y-1">
-                  <div className="text-4xl font-bold text-primary">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-gray-600">
-                    {stat.label}
-                    {stat.sublabel && (
-                      <div className="text-xs">{stat.sublabel}</div>
-                    )}
-                  </div>
-                </div>
-              ))}
+            {/* Stats - Horizontal */}
+            <div className="flex gap-8 items-start pt-2">
+              <div>
+                <div className="text-3xl font-bold text-primary mb-1">15+</div>
+                <div className="text-xs text-gray-600">ani<br/>de experiență</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-primary mb-1">300+</div>
+                <div className="text-xs text-gray-600">clienți deserviți</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-primary mb-1">10+</div>
+                <div className="text-xs text-gray-600">specialiști în echipă</div>
+              </div>
             </div>
           </div>
 
-          {/* Right Column - Feature Cards */}
-          <div className="space-y-6">
+          {/* Right Column - Feature Cards with Icons */}
+          <div className="space-y-4">
             {features.map((feature, index) => (
-              <div
-                key={index}
-                className="flex gap-4 p-6 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-colors"
-              >
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <div className="w-6 h-6 rounded-full bg-primary"></div>
+              <div key={index} className="flex gap-4 items-start">
+                {/* Blue Circle Icon */}
+                <div className="flex-shrink-0 mt-1">
+                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                    <div className="w-4 h-4 rounded-full bg-primary"></div>
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <h3 className="font-semibold text-lg leading-snug">
+                {/* Text */}
+                <div className="flex-1">
+                  <h3 className="font-bold text-sm leading-tight mb-1">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-xs text-gray-600 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

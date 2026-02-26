@@ -31,15 +31,15 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-20 px-6 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 overflow-hidden"
+      className="relative py-16 px-6 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 overflow-hidden"
     >
       {/* Decorative Stars */}
-      <div className="absolute top-10 left-10 w-12 h-12 text-yellow-300 opacity-80 animate-pulse">
+      <div className="absolute top-12 left-12 w-10 h-10 text-yellow-300 opacity-70">
         <svg viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
         </svg>
       </div>
-      <div className="absolute top-20 right-32 w-8 h-8 text-black opacity-60">
+      <div className="absolute top-24 right-24 w-7 h-7 text-black opacity-50">
         <svg viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
         </svg>

@@ -17,13 +17,13 @@ export default function Portfolio() {
   ];
 
   return (
-    <section id="portofoliu" className="py-20 px-6 bg-white">
+    <section id="portofoliu" className="py-16 px-6 bg-white">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold flex items-center justify-center gap-3">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold inline-flex items-center gap-2">
             Proiectele noastre
-            <span className="text-primary text-2xl">✦</span>
+            <span className="text-primary text-xl">✦</span>
           </h2>
         </div>
 

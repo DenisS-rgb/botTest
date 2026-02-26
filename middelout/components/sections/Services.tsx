@@ -66,19 +66,22 @@ export default function Services() {
   ];
 
   return (
-    <section id="servicii" className="py-20 px-6 bg-gray-50">
+    <section id="servicii" className="py-16 px-6 bg-white">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
-        <div className="text-center space-y-6 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+        <div className="text-center space-y-4 mb-12">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <span className="text-sm font-medium text-gray-500 tracking-wider">CE FACEM</span>
+            <span className="text-primary text-lg">✦</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight max-w-3xl mx-auto">
             Oferim Servicii De Înaltă Calitate
             <br />
             Care Generează Rezultate
             <br />
             Tangibile.
-            <span className="text-primary ml-2">✦</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-sm text-gray-600 max-w-xl mx-auto pt-2">
             Ajutăm clienții să-și dezvolte proiectele prin soluții eficiente,
             expertiză de calitate și un proces de lucru clar și structurat.
           </p>

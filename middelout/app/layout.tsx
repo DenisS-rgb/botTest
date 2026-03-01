@@ -9,21 +9,21 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "MIDDLEOUT - Dezvoltare Web & Soluții IT",
   description:
-    "Dezvoltăm website-uri puternice care aduc rezultate remarcabile. Soluții web personalizate pentru afacerea ta.",
+      "Dezvoltăm website-uri puternice care aduc rezultate remarcabile. Soluții web personalizate pentru afacerea ta.",
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="ro" className="scroll-smooth">
+      <html lang="ro" className="scroll-smooth">
       <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
+      <Header />
+      {children}
+      <Footer />
       </body>
-    </html>
+      </html>
   );
 }

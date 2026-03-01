@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen w-full max-w-[1440px] mx-auto bg-white flex flex-col items-center justify-center overflow-hidden px-0 py-20">
+    <section className="relative min-h-screen w-full mx-auto bg-white flex flex-col items-center justify-center overflow-hidden px-0">
       {/* Decorative stars - responsive positioned */}
       <div
         className="absolute w-[30px] h-[31px] opacity-100 hidden lg:block"

@@ -2,7 +2,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative w-full max-w-[1440px] mx-auto bg-white py-20 px-4 md:px-8 lg:px-16 overflow-hidden"
+      className="relative w-full mx-auto bg-white md:px-8 lg:px-16 overflow-hidden"
     >
       {/* Decorative stars */}
       <div

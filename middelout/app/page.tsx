@@ -5,13 +5,13 @@ import Portfolio from "@/components/sections/Portfolio";
 import Contact from "@/components/sections/Contact";
 
 export default function Home() {
-  return (
-    <main className="min-h-screen">
-      <Hero />
-      <About />
-      <Services />
-      <Portfolio />
-      <Contact />
-    </main>
-  );
+    return (
+        <main className="min-h-screen pt-[72px]">
+            <Hero />
+            <About />
+            <Services />
+            <Portfolio />
+            <Contact />
+        </main>
+    );
 }

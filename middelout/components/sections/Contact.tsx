@@ -89,6 +89,7 @@ export default function Contact() {
 
                   {/* form body */}
                   <div className="flex-1 px-6 py-6">
+
                     <form onSubmit={handleSubmit} className="flex h-full flex-col justify-between">
 
                       <div className="space-y-5">
@@ -174,6 +175,7 @@ export default function Contact() {
                           />
                         </div>
 
+
                       </div>
 
                       {/* button */}
@@ -184,15 +186,23 @@ export default function Contact() {
                         Trimite solicitarea
                       </button>
 
+
                     </form>
+
                   </div>
 
                </div>
+                <img
+                    src="/images/human.svg"
+                    alt=""
+                    className="w-[209px] h-[220px] ml-[485px] -mt-[230px]"
+                />
 
               </div>
 
               {/* RIGHT SIDE */}
               <div className="relative flex min-h-[420px] flex-col justify-center pt-[70px] lg:pt-[130px]">
+
                 <div className="ml-0 max-w-[340px] lg:ml-[150px] mt-[250px]">
                   <div className="mb-6 flex items-center gap-4 text-black">
                     <div className="flex h-[32px] w-[32px] items-center justify-center">

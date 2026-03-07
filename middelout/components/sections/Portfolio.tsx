@@ -1,85 +1,84 @@
 export default function Portfolio() {
-  const projects = [
-    {
-      name: "Robill",
-      type: "Website",
-      image: "/images/project-robill-759615.png",
-    },
-    {
-      name: "Staiinfata",
-      type: "Website",
-      image: "/images/project-staiinfata.png",
-    },
-  ];
+    const projects = [
+        {
+            name: "Robill",
+            type: "Website",
+            image: "/images/robill.png",
+            url: "https://robill.ro",
+        },
+        {
+            name: "Staiinfata",
+            type: "Website",
+            image: "/images/staiinfata.png",
+            url: "https://staiinfata.ro",
+        },
+    ];
 
-  return (
-    <section
-      id="portfolio"
-      className="relative w-full max-w-[1440px] mx-auto bg-white py-20 px-4 md:px-8 lg:px-16 overflow-hidden"
-    >
-      {/* Decorative stars */}
-      <div
-        className="absolute w-[23px] h-[25px] opacity-100 hidden lg:block"
-        style={{
-          right: "25%",
-          top: "10%",
-          background:
-            "linear-gradient(185deg, rgba(71, 118, 230, 1) 35%, rgba(195, 211, 248, 1) 88%)",
-          borderRadius: "50%",
-          filter: "drop-shadow(0px 0px 11.1px rgba(128, 165, 255, 0.45))",
-          clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
-        }}
-      ></div>
-      <div
-        className="absolute w-[14px] h-[15px] opacity-100 hidden lg:block"
-        style={{
-          right: "23%",
-          top: "14%",
-          background:
-            "linear-gradient(185deg, rgba(71, 118, 230, 1) 35%, rgba(195, 211, 248, 1) 88%)",
-          borderRadius: "50%",
-          filter: "drop-shadow(0px 0px 11.1px rgba(128, 165, 255, 0.45))",
-          clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
-        }}
-      ></div>
+    return (
+        <section
+            id="portfolio"
+            className="relative w-full bg-white pt-[120px] pb-[120px] overflow-hidden"
+        >
 
-      <div className="max-w-[936px] mx-auto">
-        {/* Title */}
-        <h2 className="font-inter font-semibold text-[clamp(40px,4vw,62px)] leading-[1.21] text-black mb-16 text-center lg:text-left">
-          Proiectele noastre
-        </h2>
+            {/* grid background */}
+            <img
+                src="/images/Grid.png"
+                className="absolute left-[120px] top-[120px] w-[1200px] opacity-30 z-0 pointer-events-none"
+            />
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group bg-white border border-black rounded-[12px] overflow-hidden hover:shadow-2xl transition-all duration-300"
-            >
-              {/* Image Container */}
-              <div className="relative w-full h-[270px] bg-gray-100 rounded-t-[12px] overflow-hidden">
-                {/* Placeholder for image */}
-                <div className="w-full h-full flex items-center justify-center text-6xl font-bold text-gray-300">
-                  {project.name[0]}
+            {/* stars */}
+            <img
+                src="/icons/STAR.svg"
+                className="absolute right-[620px] top-[130px] w-[38px]"
+            />
+
+            <img
+                src="/icons/STAR.svg"
+                className="absolute right-[600px] top-[150px] w-[28px]"
+            />
+
+            <div className="max-w-[1200px] mx-auto px-6">
+
+                {/* title */}
+                <h2 className="text-[64px] font-bold text-center mb-[80px]">
+                    Proiectele noastre
+                </h2>
+
+                {/* cards */}
+                <div className="flex gap-[40px]">
+
+                    {projects.map((project, index) => (
+                        <a
+                            key={index}
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block bg-white rounded-[12px] overflow-hidden w-[360px] hover:shadow-xl transition"
+                        >
+                            {/* image */}
+                            <div className="overflow-hidden">
+                                <img
+                                    src={project.image}
+                                    className="w-full object-cover"
+                                />
+                            </div>
+
+                            {/* info */}
+                            <div className="p-6 border border-black rounded-b-[12px]">
+                                <h3 className="text-[22px] font-semibold mb-1">
+                                    {project.name}
+                                </h3>
+
+                                <p className="text-[18px] text-black">
+                                    {project.type}
+                                </p>
+                            </div>
+                        </a>
+                    ))}
+
                 </div>
-              </div>
 
-              {/* Info Container with blur effect */}
-              <div className="relative bg-white/90 backdrop-blur-md border-t border-black p-6">
-                <h3 className="font-inter font-medium text-[24px] leading-[1.21] text-black mb-2">
-                  {project.name}
-                </h3>
-                <p className="font-inter font-normal text-[20px] leading-[1.21] text-black">
-                  {project.type}
-                </p>
-              </div>
-
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-[12px]"></div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 }

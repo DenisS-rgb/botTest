@@ -19,7 +19,7 @@ Dev server is already running at: **http://localhost:3001**
 
 ### Step 1: Add Project Images (2 min)
 ```bash
-# Place your project images in public/images/
+# Place your project images.svg in public/images.svg/
 # - robill-preview.jpg
 # - staiinfata-preview.jpg
 ```

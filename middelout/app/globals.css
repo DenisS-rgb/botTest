@@ -10,10 +10,6 @@
   box-sizing: border-box;
 }
 
-/* Remove default margin */
-* {
-  margin: 0;
-}
 
 /* Base html */
 html {
@@ -50,7 +46,6 @@ select {
 
 /* Remove button styles */
 button {
-  background: none;
   border: none;
   cursor: pointer;
 }

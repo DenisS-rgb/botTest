@@ -113,9 +113,9 @@ LICENSE               ← MIT License
 
 ### 1️⃣ Add Project Images (5 minutes)
 ```bash
-# Place images in:
-public/images/robill-preview.jpg
-public/images/staiinfata-preview.jpg
+# Place images.svg in:
+public/images.svg/robill-preview.jpg
+public/images.svg/staiinfata-preview.jpg
 
 # Or update paths in:
 components/sections/Portfolio.tsx

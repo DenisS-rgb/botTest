@@ -17,172 +17,209 @@ export default function Contact() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+      e: React.ChangeEvent<
+          HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+      >
   ) => {
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [e.target.name]: e.target.value,
-    });
+    }));
   };
 
   return (
-    <section
-      id="contact"
-      className="relative w-full bg-gradient-to-b from-[#0066FF] to-[#B9FF66] py-20 px-4 md:px-8 overflow-hidden"
-    >
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-transparent opacity-30 pointer-events-none"></div>
+      <section
+          id="contact"
+          className="relative overflow-hidden bg-[#0066FF]"
+      >
+        {/* BLUE TOP + DIAGONAL WHITE */}
+        <div className="relative min-h-[860px] ">
+          <div
+              className="absolute inset-x-0 bottom-0 h-[62%] bg-[#FFF]"
+              style={{
+                clipPath: "polygon(0 40%, 100% 0%, 100% 100%, 0 100%)",
+              }}
+          />
 
-      <div className="relative max-w-[1280px] mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left Column - Info */}
-          <div className="text-white">
-            <h2 className="text-[clamp(48px,5vw,64px)] font-inter font-bold leading-[1.21] mb-6">
-              Conectează-te
-            </h2>
+          {/* LEFT DECOR */}
+          <img
+              src="/icons/star-green.svg"
+              alt=""
+              className="pointer-events-none absolute left-[95px] top-[58px] z-10 w-[88px]"
+          />
 
-            <p className="text-[20px] font-inter font-normal leading-[1.21] mb-12 max-w-[705px]">
-              Completează formularul și te contactăm pentru o discuție inițială.
-            </p>
+          <img
+              src="/icons/sun.svg"
+              alt=""
+              className="pointer-events-none absolute z-0"
+          />
 
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black text-xl">
-                  📞
-                </div>
-                <span className="font-pontano font-semibold text-[24px] leading-[1.28] text-black">
-                  +40 729 818 463
-                </span>
-              </div>
+          <img
+              src="/icons/star-black.svg"
+              alt=""
+              className="pointer-events-none absolute left-[15px] top-[132px] z-10 w-[124px]"
+          />
 
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black text-xl">
-                  ✉️
-                </div>
-                <span className="font-pontano font-semibold text-[24px] leading-[1.28] text-black">
-                  office@middleout.com
-                </span>
-              </div>
+          {/* CONTENT */}
+          <div className="relative z-20 mx-[35px] px-10 pt-[34px] pb-[20px]">
+            {/* HEADER */}
+            <div className="mb-[54px] text-center text-white">
+              <h2 className="text-[52px] font-bold leading-none md:text-[60px]">
+                Conectează-te
+              </h2>
+
+              <p className="mt-3 text-[14px] text-white/90 md:text-[15px]">
+                Completează formularul și te contactăm pentru o discuție inițială.
+              </p>
             </div>
 
-            {/* Illustration placeholder */}
-            <div className="mt-12 w-48 h-48 bg-gradient-to-br from-yellow-200/50 to-yellow-400/50 rounded-full opacity-60 hidden lg:block"></div>
-          </div>
+            <div className="grid items-start gap-[80px] lg:grid-cols-[620px_1fr]">
+              {/* FORM WINDOW */}
+              <div className="relative mt-[60px]">
+                <div className="overflow-hidden rounded-[14px] w-[531px] min-h-[775px] border-[2.5px] border-black bg-white shadow-[0_10px_30px_rgba(0,0,0,0.18)] flex flex-col">
 
-          {/* Right Column - Form */}
-          <div className="bg-white border-[3px] border-black rounded-[20px] shadow-2xl p-8">
-            {/* Decorative header circles */}
-            <div className="flex gap-2 mb-8">
-              <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
-            </div>
+                  {/* window header */}
+                  <div className="flex h-[55px] items-center justify-end border-b-[2px] border-black bg-[#CEC7F4] px-4">
+                    <div className="flex items-center gap-[28px] text-black">
+                      <span className="text-[32px] leading-none">─</span>
+                      <span className="text-[32px] leading-none">□</span>
+                      <span className="text-[32px] leading-none">×</span>
+                    </div>
+                  </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name */}
-              <div>
-                <label className="block font-poppins font-normal text-[14px] leading-[21px] text-black mb-3">
-                  Nume
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full h-[46px] px-4 bg-[#F7F7F7] rounded-[20px] border-none outline-none focus:ring-2 focus:ring-black font-poppins"
-                  required
-                />
+                  {/* form body */}
+                  <div className="flex-1 px-6 py-6">
+                    <form onSubmit={handleSubmit} className="flex h-full flex-col justify-between">
+
+                      <div className="space-y-5">
+
+                        {/* Nume */}
+                        <div>
+                          <label className="mb-1 block text-[13px] font-medium text-black">
+                            Nume
+                          </label>
+
+                          <input
+                              type="text"
+                              name="name"
+                              value={formData.name}
+                              onChange={handleChange}
+                              required
+                              className="h-[44px] w-full rounded-[12px] bg-[#F1F1F1] px-4 text-[14px] outline-none"
+                          />
+                        </div>
+
+                        {/* Email */}
+                        <div>
+                          <label className="mb-1 block text-[13px] font-medium text-black">
+                            Email
+                          </label>
+
+                          <input
+                              type="email"
+                              name="email"
+                              value={formData.email}
+                              onChange={handleChange}
+                              required
+                              className="h-[44px] w-full rounded-[12px] bg-[#F1F1F1] px-4 text-[14px] outline-none"
+                          />
+                        </div>
+
+                        {/* Service */}
+                        <div>
+                          <label className="mb-1 block text-[13px] font-medium text-black">
+                            Ce serviciu te interesează
+                          </label>
+
+                          <select
+                              name="service"
+                              value={formData.service}
+                              onChange={handleChange}
+                              required
+                              className="h-[44px] w-full rounded-[12px] bg-[#F1F1F1] px-4 text-[14px] text-[#9A9A9A] outline-none"
+                          >
+                            <option value="">Select project type</option>
+                            <option value="web">Web development</option>
+                            <option value="hosting">Hosting</option>
+                            <option value="consulting">Consulting</option>
+                          </select>
+                        </div>
+
+                        {/* Budget */}
+                        <div>
+                          <label className="mb-1 block text-[13px] font-medium text-black">
+                            Buget
+                          </label>
+
+                          <input
+                              type="text"
+                              name="budget"
+                              value={formData.budget}
+                              onChange={handleChange}
+                              className="h-[44px] w-full rounded-[12px] bg-[#F1F1F1] px-4 text-[14px] outline-none"
+                          />
+                        </div>
+
+                        {/* Message */}
+                        <div>
+                          <label className="mb-1 block text-[13px] font-medium text-black">
+                            Mesaj
+                          </label>
+
+                          <textarea
+                              name="message"
+                              value={formData.message}
+                              onChange={handleChange}
+                              className="min-h-[170px] w-full resize-none rounded-[12px] bg-[#F1F1F1] px-4 py-3 text-[14px] outline-none"
+                          />
+                        </div>
+
+                      </div>
+
+                      {/* button */}
+                      <button
+                          type="submit"
+                          className="mt-6 h-[52px] w-full rounded-[30px] bg-black text-[16px] font-medium text-white transition hover:bg-gray-800 active:scale-[0.98]"
+                      >
+                        Trimite solicitarea
+                      </button>
+
+                    </form>
+                  </div>
+
+               </div>
+
               </div>
 
-              {/* Email */}
-              <div>
-                <label className="block font-poppins font-normal text-[14px] leading-[21px] text-black mb-3">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full h-[46px] px-4 bg-[#F7F7F7] rounded-[20px] border-none outline-none focus:ring-2 focus:ring-black font-poppins"
-                  required
-                />
-              </div>
-
-              {/* Service Type */}
-              <div>
-                <label className="block font-poppins font-normal text-[14px] leading-[21px] text-black mb-3">
-                  Ce serviciu te interesează
-                </label>
-                <div className="relative">
-                  <select
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="w-full h-[46px] px-4 bg-[#F7F7F7] rounded-[20px] border-none outline-none focus:ring-2 focus:ring-black font-poppins text-[#B2B2B2] appearance-none"
-                    required
-                  >
-                    <option value="">Select project type</option>
-                    <option value="web-dev">Dezvoltare web</option>
-                    <option value="hosting">Hosting & infrastructură</option>
-                    <option value="consulting">Consultanță IT</option>
-                  </select>
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M7 10L12 15L17 10"
-                        stroke="#222222"
-                        strokeWidth="2"
-                        strokeLinecap="round"
+              {/* RIGHT SIDE */}
+              <div className="relative flex min-h-[420px] flex-col justify-center pt-[70px] lg:pt-[130px]">
+                <div className="ml-0 max-w-[340px] lg:ml-[150px] mt-[250px]">
+                  <div className="mb-6 flex items-center gap-4 text-black">
+                    <div className="flex h-[32px] w-[32px] items-center justify-center">
+                      <img
+                          src="/icons/phone.svg"
+                          alt=""
+                          className=""
                       />
-                    </svg>
+                    </div>
+                    <span className="text-[25px] font-medium">+40 729 818 463</span>
+                  </div>
+
+                  <div className="flex items-center gap-4 text-black">
+                    <div className="flex h-[32px] w-[32px] items-center justify-center">
+                      <img
+                          src="/icons/mail.svg"
+                          alt=""
+                          className="]"
+                      />
+                    </div>
+                    <span className="text-[25px] font-medium">office@middleout.com</span>
                   </div>
                 </div>
               </div>
-
-              {/* Budget */}
-              <div>
-                <label className="block font-poppins font-normal text-[14px] leading-[21px] text-black mb-3">
-                  Buget
-                </label>
-                <input
-                  type="text"
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  className="w-full h-[46px] px-4 bg-[#F7F7F7] rounded-[20px] border-none outline-none focus:ring-2 focus:ring-black font-poppins"
-                />
-              </div>
-
-              {/* Message */}
-              <div>
-                <label className="block font-poppins font-normal text-[14px] leading-[21px] text-black mb-3">
-                  Mesaj
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={6}
-                  className="w-full h-[165px] px-4 py-3 bg-[#F7F7F7] rounded-[20px] border-none outline-none focus:ring-2 focus:ring-black resize-none font-poppins"
-                  required
-                />
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full h-[56px] bg-black text-white rounded-[30px] font-poppins font-medium text-[20px] leading-[30px] hover:bg-gray-800 transition-colors"
-              >
-                Trimite solicitarea
-              </button>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 }
